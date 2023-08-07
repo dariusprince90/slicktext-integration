@@ -13,3 +13,9 @@ This function will be used and integrated by myself (I am a full stack developer
 I am using Laravel 10 and PHP 8. You will need to create a free account to get api keys.
 
 # Development
+
+## Configuration
+
+-   Laravel 10
+-   React 18
+-   Typescript
