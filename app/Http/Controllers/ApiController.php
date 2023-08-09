@@ -35,7 +35,7 @@ class ApiController extends Controller
                 CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
                 CURLOPT_CUSTOMREQUEST => 'GET',
                 CURLOPT_HTTPHEADER => array(
-                    'Authorization: Basic cHViXzNmNjNkNjk3MGU1NGQ3ZjExOThlZTc3OWE1OWY1MmQ1OjAxNWVkYTY0NWFiOTJiODNmNmYxMTAxODVmZGJmYmYy'
+                    'Authorization: Basic ' . env('SLICK_TEXT_AUTH')
                 ),
             )
         );
@@ -64,9 +64,9 @@ class ApiController extends Controller
                 CURLOPT_FOLLOWLOCATION => true,
                 CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
                 CURLOPT_CUSTOMREQUEST => 'POST',
-                CURLOPT_POSTFIELDS => array('action' => 'DELETE', 'textword' => '3737622'),
+                CURLOPT_POSTFIELDS => array('action' => 'DELETE', 'textword' => env('SLICK_TEXT_TEXTWORD')),
                 CURLOPT_HTTPHEADER => array(
-                    'Authorization: Basic cHViXzNmNjNkNjk3MGU1NGQ3ZjExOThlZTc3OWE1OWY1MmQ1OjAxNWVkYTY0NWFiOTJiODNmNmYxMTAxODVmZGJmYmYy'
+                    'Authorization: Basic ' . env('SLICK_TEXT_AUTH')
                 ),
             )
         );
@@ -93,7 +93,7 @@ class ApiController extends Controller
 
         $apiData = [
             'action' => 'OPTIN',
-            'textword' => '3737622',
+            'textword' => env('SLICK_TEXT_TEXTWORD'),
             'number' => $data['number'],
             'firstName' => $data['first_name'],
             'lastName' => $data['last_name'],
@@ -121,7 +121,7 @@ class ApiController extends Controller
                 CURLOPT_CUSTOMREQUEST => 'POST',
                 CURLOPT_POSTFIELDS => $apiData,
                 CURLOPT_HTTPHEADER => array(
-                    'Authorization: Basic cHViXzNmNjNkNjk3MGU1NGQ3ZjExOThlZTc3OWE1OWY1MmQ1OjAxNWVkYTY0NWFiOTJiODNmNmYxMTAxODVmZGJmYmYy'
+                    'Authorization: Basic ' . env('SLICK_TEXT_AUTH')
                 ),
             )
         );
