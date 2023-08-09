@@ -19,7 +19,7 @@ Route::get('/', function () {
 });
 
 
-Route::get('apiwork', [ApiController::class, 'apiwork'])->name('apiwork');;
+Route::get('apiwork', [ApiController::class, 'apiwork'])->name('apiwork');
 
 Route::delete('/contacts/{id}', [ApiController::class, 'destroy'])->name('delete.contact');
 
